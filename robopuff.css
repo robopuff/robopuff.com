@@ -1,0 +1,15 @@
+body{max-width:650px;margin:40px auto;padding:0 10px;font:18px/1.5 monospace;color:#444}
+h1,h2,h3{line-height:1.2;font-weight:400;}
+a:link{color:#44f;text-decoration:none;}
+a:visited{color:#44f}
+a:hover{text-decoration:underline}
+.honey{display:none}
+ul li {list-style:none}
+hr { display: block; height: 2px;
+    border: 0; border-top: 2px solid #ccc;
+    margin: 1em 0; padding: 0; }
+
+@media (prefers-color-scheme: dark){
+    body{color:white;background:#222}a:link{color:#5bf}a:visited{color:#5bf}
+    hr { border-color: #343434; }
+}

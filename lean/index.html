@@ -13,8 +13,9 @@
 <link rel="apple-touch-icon" href="./icon-192.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="style.css" media="all" />
 <title>Motorcycle Lean Meter</title>
+  <script type="module" crossorigin src="./assets/index-CWDmXojA.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C9zv_20b.css">
 </head>
 <body>
   <div id="app">
@@ -61,6 +62,10 @@
             </div>
         </div>
         <div class="right">
+            <div id="ride-state" class="ride-state" role="button" title="Tap for the full ride summary">
+                <div class="ride-state-label">RIDE</div>
+                <div id="ride-state-word" class="ride-state-word number band-calibrating">CALIBRATING</div>
+            </div>
             <div class="controls">
             <button id="btn-zero" type="button">Zero</button>
             <button id="btn-reset" type="button">Reset</button>
@@ -82,8 +87,56 @@
       <h2>Rotate Phone</h2>
       <p>Landscape Mode Required</p>
     </div>
+
+    <!-- ===== Ride summary ===== -->
+    <div id="summary" class="hidden">
+      <div class="summary-card">
+        <h2>Ride Summary</h2>
+        <div class="summary-hero">
+          <div id="summary-score" class="summary-score number">--</div>
+          <div id="summary-band" class="summary-band">NOT ENOUGH DATA</div>
+        </div>
+        <p id="summary-note" class="summary-note"></p>
+        <div id="summary-metrics" class="summary-metrics">
+          <div class="metric" data-metric="calmness">
+            <div class="metric-head">
+              <span class="metric-label">Calmness</span>
+              <span class="metric-value number">--</span>
+            </div>
+            <div class="metric-bar"><span></span></div>
+          </div>
+          <div class="metric" data-metric="consistency">
+            <div class="metric-head">
+              <span class="metric-label">Consistency</span>
+              <span class="metric-value number">--</span>
+            </div>
+            <div class="metric-bar"><span></span></div>
+          </div>
+          <div class="metric" data-metric="stability">
+            <div class="metric-head">
+              <span class="metric-label">Stability</span>
+              <span class="metric-value number">--</span>
+            </div>
+            <div class="metric-bar"><span></span></div>
+          </div>
+          <div class="metric" data-metric="balance">
+            <div class="metric-head">
+              <span class="metric-label">Balance</span>
+              <span class="metric-value number">--</span>
+            </div>
+            <div class="metric-bar"><span></span></div>
+          </div>
+        </div>
+        <div class="summary-footer">
+          <span id="summary-meta" class="summary-meta"></span>
+          <div class="summary-actions">
+            <button id="btn-export" type="button">Export</button>
+            <button id="btn-close-summary" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-<script src="lean.js"></script>
 </body>
 </html>
